@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>「AI 回覆」私隱政策 / "AI 回覆" Privacy Policy</title>
+  <meta name="description" content="「AI 回覆」私隱政策 / &quot;AI 回覆&quot; Privacy Policy">
+  <meta name="robots" content="index,follow">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+    <nav class="jumps" aria-label="Language">
+      <a href="#zh">繁體中文</a> / <a href="#en">English</a>
+    </nav>
+    <h1>「AI 回覆」私隱政策 / "AI 回覆" Privacy Policy</h1>
+
+    <section id="zh" lang="zh-Hant-HK">
+      <h2>繁體中文版</h2>
+      <p><strong>生效日期：</strong> 2026-10-11　<strong>政策版本：</strong> 1.0</p>
+
+      <h3>1. 我們是誰</h3>
+      <p>「AI 回覆」是一個 Chrome 擴充功能，由 Kenneth Kwok（下稱「我們」）在香港營運。它幫助你為 Gmail 郵件草擬回覆。本政策說明我們在你使用「AI 回覆」時如何處理資料。</p>
+
+      <h3>2. 重點摘要</h3>
+      <ul>
+        <li>只有在你要求草擬回覆時，我們才會處理你正在回覆的郵件串內容及你的指示，用以生成草稿。</li>
+        <li>這些內容經我們的伺服器轉送至 AI 服務供應商以生成草稿。<strong>我們不會儲存這些內容。</strong></li>
+        <li>我們只選用標示為「零資料保留」的 AI 供應商。</li>
+        <li>擴充功能<strong>不會</strong>代你發送任何電郵。草稿只會在你按「插入」後才放入回覆框，由你自行決定是否修改及發送。</li>
+        <li>我們的伺服器只儲存：你的同意／撤回同意記錄，以及不含郵件內容的基本錯誤及時間記錄。Beta 期間，我們另外離線保存你的測試邀請電郵，用作派發存取權杖及核對你的要求。</li>
+        <li>我們不出售資料、不賣廣告，也不會用你的資料訓練 AI 模型。</li>
+      </ul>
+
+      <h3>3. 我們處理哪些資料</h3>
+      <p><strong>(a) 你要求草擬回覆時：</strong></p>
+      <ul>
+        <li><strong>郵件串內容：</strong> 你正在回覆的那個郵件串的文字，例如寄件人名稱、電郵地址、日期及內文。這些內容可能包含其他人（例如寄件人）的個人資料。</li>
+        <li><strong>你的指示：</strong> 你輸入的要求，例如語氣、要點或語言。</li>
+        <li><strong>生成的草稿：</strong> AI 回傳的文字。</li>
+      </ul>
+      <p>我們不會讀取你的收件匣中其他郵件，也不會取得你 Google 帳戶的登入權限。</p>
+      <p><strong>(b) 為運作服務所需的技術資料：</strong></p>
+      <ul>
+        <li><strong>匿名識別碼：</strong> 我們發給每位測試者的存取權杖（token）。伺服器只儲存其<strong>雜湊值</strong>（hash），用作記錄你的同意狀態。</li>
+        <li><strong>IP 位址：</strong> 你的請求經互聯網到達我們的伺服器時，伺服器供應商 Cloudflare 必然會處理你的 IP 位址以傳送資料。我們的程式不會把 IP 位址寫入記錄。</li>
+      </ul>
+
+      <h3>4. 資料如何流動</h3>
+      <ol>
+        <li>你在 Gmail 回覆框按「✨ AI 回覆」開啟面板，再按「✨ 生成回覆」。</li>
+        <li>擴充功能把上述 3(a) 的內容經加密連線（HTTPS）傳送到我們在 Cloudflare 上運行的伺服器。</li>
+        <li>我們的伺服器把內容轉送至 <strong>OpenRouter</strong>。OpenRouter 是一個 AI 路由服務，再把內容交給下列其中一家已指定的 AI 供應商處理（見第 7 節）。</li>
+        <li>AI 生成的草稿經同一路徑傳回，顯示給你。</li>
+        <li>我們的伺服器<strong>只在傳送過程中暫時處理</strong>這些內容，不會把郵件內容、你的指示或草稿寫入資料庫或記錄。</li>
+      </ol>
+
+      <h3>5. 我們儲存甚麼</h3>
+      <div class="table-scroll" id="zh-s5">
+        <table>
+          <thead>
+            <tr>
+              <th>資料</th>
+              <th>用途</th>
+              <th>存放位置</th>
+              <th>保留期限</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>同意及撤回同意記錄：雜湊後的存取權杖、你同意的政策版本、時間戳記、動作（同意／撤回）</td>
+              <td>證明你曾同意，及尊重你的撤回</td>
+              <td>Cloudflare</td>
+              <td>撤回後或存取權杖最後使用後 12 個月，以較早者為準</td>
+            </tr>
+            <tr>
+              <td>基本運作記錄：請求類型、錯誤代碼、處理時間、串流結束原因</td>
+              <td>偵錯、維持服務穩定及防止濫用</td>
+              <td>Cloudflare Workers Logs</td>
+              <td>最長 7 日（Cloudflare 上限）</td>
+            </tr>
+            <tr>
+              <td>測試邀請電郵與存取權杖的對照</td>
+              <td>派發存取權杖，及核對你的查閱、撤回或刪除要求</td>
+              <td>由營運者離線保存，不存放於伺服器</td>
+              <td>Beta 結束後或你要求刪除時刪除，以較早者為準</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>上述運作記錄<strong>不包含</strong>郵件內容、你的指示、AI 草稿、API 金鑰或存取權杖。</p>
+      <p>Beta 結束後，如你繼續使用「AI 回覆」，將改用正式登入。測試邀請電郵與存取權杖的對照不會延續，會按上表刪除。</p>
+      <p>擴充功能亦會在你的瀏覽器內（本機）儲存設定及同意狀態。這些資料只存在你的電腦上，解除安裝擴充功能時會一併移除。</p>
+
+      <h3>6. 我們不會做的事</h3>
+      <ul>
+        <li>不會出售或出租你的資料。</li>
+        <li>不會用你的資料投放或建立廣告檔案。</li>
+        <li>我們<strong>不會</strong>用你的郵件內容或指示訓練任何 AI 模型。</li>
+        <li>我們不儲存郵件內容，因此我們的人員無法閱讀你的郵件內容。只有當你主動把內容提供給我們（例如寄電郵求助）時，我們才會看到。</li>
+      </ul>
+
+      <h3>7. 第三方服務</h3>
+      <p>為提供服務，你的郵件串內容及指示會經過以下第三方。以下描述根據各公司於 2026 年 10 月 6 日公開的政策，日後可能更改。</p>
+      <p><strong>A. Cloudflare（伺服器託管，美國公司，全球網絡）</strong></p>
+      <p>運行我們的轉送伺服器，並按上表保存不含內容的運作記錄。</p>
+      <p><strong>B. OpenRouter（AI 路由，美國）</strong></p>
+      <ul>
+        <li>OpenRouter 表示，除非帳戶選擇開啟記錄功能，否則它不會儲存提示或回應內容。我們沒有開啟該功能。</li>
+        <li>OpenRouter 會保存每次請求的元數據（例如字數、延遲），但不包括內容。</li>
+        <li>OpenRouter 表示它不會用輸入或輸出訓練模型。</li>
+        <li>OpenRouter 表示會抽樣少量提示作匿名分類，只儲存不與帳戶連結的類別。</li>
+        <li>我們設定每次請求只可使用 OpenRouter 分類為「零資料保留」（Zero Data Retention）的供應商，並排除其他供應商。</li>
+      </ul>
+      <p id="zh-s7c"><strong>C. AI 模型供應商</strong></p>
+      <p>你的內容會由以下<strong>其中一家</strong>處理（DeepSeek 模型只由 DeepInfra 處理）。實際是哪一家由 OpenRouter 按供應情況決定。</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>供應商</th>
+              <th>總部</th>
+              <th>公開政策重點</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>DeepInfra</td>
+              <td>美國</td>
+              <td>推理時只在記憶體處理，不寫入磁碟；輸出傳回後即刪除；不以你的資料訓練模型；只記錄不含內容的元數據。</td>
+            </tr>
+            <tr>
+              <td>Parasail</td>
+              <td>美國</td>
+              <td>即時（serverless／dedicated）服務不儲存或記錄輸入，只保留至生成及傳回結果為止；不以輸入或輸出訓練其模型。</td>
+            </tr>
+            <tr>
+              <td>Novita</td>
+              <td>美國</td>
+              <td>採用「零資料保留」政策：除法律要求或提供服務所需外，不保留至生成及傳回結果以後；預設不以內容訓練模型；可能進行自動安全篩查。</td>
+            </tr>
+            <tr>
+              <td>Venice</td>
+              <td>美國</td>
+              <td>我們使用的 Qwen3 模型屬 Venice「Private」級別：內容只用作推理，請求完成後不保留；Venice 不以用戶內容訓練模型，並要求其上游供應商同樣不得訓練。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>使用的模型：</strong> 預設使用 Qwen3 235B（<code>qwen/qwen3-235b-a22b-2507</code>，阿里巴巴通義千問團隊的開源模型），由上表任何一家供應商運行。如你在設定中選擇 DeepSeek，則使用 DeepSeek V3（<code>deepseek/deepseek-chat</code>，開源模型），只由 DeepInfra 運行。<strong>你的內容不會傳送給阿里巴巴或 DeepSeek 公司本身。</strong></p>
+      <p>「零資料保留」按 OpenRouter 的定義，指供應商不會在任何時間長度內儲存你的資料。但根據 OpenRouter 的定義，供應商在記憶體中短暫快取提示<strong>不</strong>算作保留。</p>
+
+      <h3>8. 跨境資料轉移</h3>
+      <p>上述服務的伺服器位於香港以外，主要在美國，亦可能在歐洲或其他地區。使用「AI 回覆」即表示你的郵件串內容及指示會被傳送到香港以外處理。我們只選用公開承諾不保留及不訓練的供應商，以減低風險（見第 7 節）。</p>
+
+      <h3>9. 你的權利</h3>
+      <p>根據香港《個人資料（私隱）條例》（第 486 章），你有權：</p>
+      <ul>
+        <li><strong>查閱及改正</strong>我們持有關於你的個人資料；</li>
+        <li><strong>撤回同意</strong>：你可隨時在擴充功能的設定中撤回。撤回後，擴充功能不會再傳送任何郵件內容，伺服器會記錄撤回時間；</li>
+        <li><strong>要求刪除</strong>你的同意記錄及邀請電郵對照。</li>
+      </ul>
+      <p><strong>如何提出：</strong> 請用你收到測試邀請的電郵地址寄至 <a href="mailto:opt.adm8988@gmail.com">opt.adm8988@gmail.com</a>（或在電郵中註明該地址），並註明大約何時撤回或要求刪除。我們會以測試邀請電郵及提交時間核對。我們不會在介面公開顯示個人識別碼。我們會在收到要求後 40 日內回覆。</p>
+      <p><strong>特別情況：離線撤回或直接解除安裝。</strong></p>
+      <ul>
+        <li>如你在<strong>離線</strong>時撤回同意，擴充功能會即時停止傳送內容。但伺服器可能要待下次連線才收到撤回通知。</li>
+        <li>如你<strong>未撤回同意就直接解除安裝</strong>，伺服器無法得知，你的同意記錄會保留至「撤回後或存取權杖最後使用後 12 個月，以較早者為準」屆滿後自動刪除。</li>
+        <li>在以上兩種情況下，你都可以電郵至 <a href="mailto:opt.adm8988@gmail.com">opt.adm8988@gmail.com</a> 要求刪除，並用你收到測試邀請的電郵地址寄出（或註明該地址）。如果我們無法核對是哪一條記錄，這些記錄只含雜湊識別碼、政策版本及時間，不含郵件內容。</li>
+      </ul>
+      <p>請注意：我們沒有儲存你的郵件內容，因此<strong>沒有郵件內容可供查閱或刪除</strong>。至於 OpenRouter 及各供應商，按其公開政策，它們亦不保留內容（見第 7 節）。</p>
+
+      <h3>10. Chrome 線上應用程式商店使用者資料政策</h3>
+      <p>「AI 回覆」使用資料的方式遵守 Chrome Web Store User Data Policy，包括 Limited Use（有限使用）規定：</p>
+      <ul>
+        <li>資料只用於本擴充功能的單一用途，即為你正在回覆的郵件草擬回覆；</li>
+        <li>只在提供此功能所需時才把資料傳送給第三方（即第 7 節所列服務），或在法律要求、防止濫用時傳送；</li>
+        <li>不會把資料用於或轉移作個人化廣告，不會出售給廣告平台或資料經紀，也不會用作評估信用或借貸；</li>
+        <li>除非得到你明確同意、為安全理由或法律要求，否則不會讓任何人閱讀你的資料。</li>
+      </ul>
+
+      <h3>11. 資料安全</h3>
+      <ul>
+        <li>擴充功能與伺服器之間，以及伺服器與 OpenRouter 之間，均使用加密連線（HTTPS）。</li>
+        <li>API 金鑰只存放在伺服器端，不會放在擴充功能內。</li>
+        <li>識別碼以雜湊形式儲存。</li>
+      </ul>
+      <p>任何互聯網傳輸都不能保證絕對安全。</p>
+
+      <h3>12. 使用者年齡</h3>
+      <p>「AI 回覆」並非為 18 歲以下人士而設。</p>
+
+      <h3>13. 政策修改</h3>
+      <p>如我們修改本政策，會更新版本號及生效日期。如修改涉及重大改變（例如新增 AI 供應商或開始儲存新類別的資料），擴充功能會請你<strong>再次確認同意</strong>，之後才會繼續傳送內容。</p>
+
+      <h3>14. 聯絡及投訴</h3>
+      <ul>
+        <li>有任何查詢或要求，請電郵至 <a href="mailto:opt.adm8988@gmail.com">opt.adm8988@gmail.com</a>。</li>
+        <li>如你認為我們未有妥善處理你的個人資料，可向香港個人資料私隱專員公署投訴：<a href="https://www.pcpd.org.hk" rel="noopener">https://www.pcpd.org.hk</a></li>
+      </ul>
+    </section>
+
+    <hr>
+
+    <section id="en" lang="en">
+      <h2>English version</h2>
+      <p><strong>Effective date:</strong> 2026-10-11　<strong>Policy version:</strong> 1.0</p>
+      <p><em>If the Chinese and English versions differ, the Chinese version prevails.</em></p>
+
+      <h3>1. Who we are</h3>
+      <p>"AI 回覆" is a Chrome extension operated in Hong Kong by Kenneth Kwok ("we"). It helps you draft replies to Gmail messages. This policy explains how we handle data when you use it.</p>
+
+      <h3>2. Summary</h3>
+      <ul>
+        <li>We process the email thread you are replying to, plus your instructions, only when you ask for a draft reply.</li>
+        <li>That content passes through our server to an AI provider so a draft can be generated. <strong>We do not store it.</strong></li>
+        <li>We only use AI providers classified as "zero data retention".</li>
+        <li>The extension <strong>never sends email for you.</strong> A draft goes into your reply box only when you click <strong>Insert</strong>, and you decide whether to edit and send it.</li>
+        <li>Our server stores only two things: your consent and withdrawal records, and basic error and timing logs that contain no email content. During Beta we also keep your invitation email offline, to issue your access token and to verify your requests.</li>
+        <li>We don't sell data, we don't run ads, and we don't use your data to train AI models.</li>
+      </ul>
+
+      <h3>3. What data we process</h3>
+      <p><strong>(a) When you ask for a draft:</strong></p>
+      <ul>
+        <li><strong>Email thread content:</strong> the text of the thread you are replying to, such as sender names, email addresses, dates and message bodies. This can include other people's personal data, for example the sender's.</li>
+        <li><strong>Your instructions:</strong> what you type, such as tone, key points or language.</li>
+        <li><strong>The generated draft:</strong> the text the AI returns.</li>
+      </ul>
+      <p>We do not read other emails in your inbox, and we do not get login access to your Google account.</p>
+      <p><strong>(b) Technical data needed to run the service:</strong></p>
+      <ul>
+        <li><strong>Pseudonymous identifier:</strong> the access token we issue to each tester. Our server stores only a <strong>hash</strong> of it, to record your consent status.</li>
+        <li><strong>IP address:</strong> when your request reaches our server, our hosting provider, Cloudflare, necessarily processes your IP address to deliver it. Our code does not write IP addresses to logs.</li>
+      </ul>
+
+      <h3>4. How the data flows</h3>
+      <ol>
+        <li>In a Gmail reply, you open the panel with <strong>✨ AI Reply</strong> and click <strong>✨ Generate reply</strong>.</li>
+        <li>The extension sends the content in 3(a) over an encrypted connection (HTTPS) to our server, which runs on Cloudflare.</li>
+        <li>Our server forwards it to <strong>OpenRouter</strong>, an AI routing service. OpenRouter passes it to one of the named AI providers in section 7.</li>
+        <li>The draft comes back the same way and is shown to you.</li>
+        <li>Our server handles the content <strong>only in transit</strong>. It does not write email content, your instructions or drafts to any database or log.</li>
+      </ol>
+
+      <h3>5. What we store</h3>
+      <div class="table-scroll" id="en-s5">
+        <table>
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Purpose</th>
+              <th>Where</th>
+              <th>How long</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Consent and withdrawal records: hashed access token, the policy version you accepted, timestamp, action (consent or withdraw)</td>
+              <td>To show you consented, and to honour your withdrawal</td>
+              <td>Cloudflare</td>
+              <td>12 months after withdrawal or after the access token was last used, whichever is earlier</td>
+            </tr>
+            <tr>
+              <td>Basic operational logs: request type, error code, timing, stream end reason</td>
+              <td>Debugging, reliability, abuse prevention</td>
+              <td>Cloudflare Workers Logs</td>
+              <td>Up to 7 days (Cloudflare maximum)</td>
+            </tr>
+            <tr>
+              <td>Mapping between your invitation email and your access token</td>
+              <td>To issue access tokens and to verify your access, withdrawal or deletion requests</td>
+              <td>Kept offline by the operator, not on our server</td>
+              <td>Deleted when Beta ends or when you ask, whichever is earlier</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>These logs do <strong>not</strong> contain email content, your instructions, AI drafts, API keys or access tokens.</p>
+      <p>If you keep using "AI 回覆" after Beta ends, you will switch to a regular sign-in. The mapping between your invitation email and your access token does not carry over and is deleted as stated in the table above.</p>
+      <p>The extension also stores your settings and consent status locally in your browser. That data stays on your computer and is removed when you uninstall the extension.</p>
+
+      <h3>6. What we don't do</h3>
+      <ul>
+        <li>We don't sell or rent your data.</li>
+        <li>We don't use your data for advertising or ad profiles.</li>
+        <li>We <strong>don't</strong> use your email content or instructions to train any AI model.</li>
+        <li>We don't store email content, so our staff cannot read it. We only see content you choose to send us yourself, for example in a support email.</li>
+      </ul>
+
+      <h3>7. Third parties</h3>
+      <p>To provide the service, your email thread content and instructions pass through the services below. The descriptions are based on each company's public policies as of 6 October 2026, and those policies may change.</p>
+      <p><strong>A. Cloudflare (hosting; US company, global network)</strong></p>
+      <p>Runs our relay server and keeps the content-free operational logs described above.</p>
+      <p><strong>B. OpenRouter (AI routing; US)</strong></p>
+      <ul>
+        <li>OpenRouter states that it does not store prompt or response content unless the account opts in to logging. We have not opted in.</li>
+        <li>OpenRouter stores per-request metadata, such as token counts and latency, but not content.</li>
+        <li>OpenRouter states that it does not use inputs or outputs for model training.</li>
+        <li>OpenRouter states that it samples a small number of prompts for anonymous categorization and stores only the category, not linked to any account.</li>
+        <li>We configure every request to use only providers that OpenRouter classifies as Zero Data Retention, and we exclude all others.</li>
+      </ul>
+      <p id="en-s7c"><strong>C. AI model providers</strong></p>
+      <p>Your content is processed by <strong>one</strong> of the following (DeepSeek runs only on DeepInfra). OpenRouter picks which one based on availability.</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>Provider</th>
+              <th>HQ</th>
+              <th>What its public policy says</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>DeepInfra</td>
+              <td>US</td>
+              <td>During inference, data is held only in memory and never written to disk. Outputs are deleted after they are returned. No training on your data. Only content-free metadata is logged.</td>
+            </tr>
+            <tr>
+              <td>Parasail</td>
+              <td>US</td>
+              <td>Real-time (serverless or dedicated) inputs are not stored or logged, and are kept only until the output is generated and delivered. Inputs and outputs are not used to train its models.</td>
+            </tr>
+            <tr>
+              <td>Novita</td>
+              <td>US</td>
+              <td>Has a "Zero Data Retention" policy: no retention beyond generating and delivering the output, except where law or service delivery requires. No training on content by default. May run automated safety screening.</td>
+            </tr>
+            <tr>
+              <td>Venice</td>
+              <td>US</td>
+              <td>The Qwen3 model we use is in Venice's "Private" tier: content is used only for inference and not kept after the request completes. Venice doesn't train on user content and requires its upstream providers not to either.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p><strong>Models:</strong> by default, Qwen3 235B (<code>qwen/qwen3-235b-a22b-2507</code>), an open-weight model from Alibaba's Qwen team, run by any of the providers above. If you choose DeepSeek in settings, we use DeepSeek V3 (<code>deepseek/deepseek-chat</code>), an open-weight model, run only by DeepInfra. <strong>Your content is not sent to Alibaba or to DeepSeek the company.</strong></p>
+      <p>Under OpenRouter's definition, "Zero Data Retention" means a provider will not store your data for any period of time. Brief in-memory prompt caching by a provider is <strong>not</strong> counted as retention under that definition.</p>
+
+      <h3>8. Cross-border transfers</h3>
+      <p>The servers for these services are outside Hong Kong, mainly in the US and possibly in Europe or elsewhere. When you use "AI 回覆", your email thread content and instructions are sent outside Hong Kong for processing. We reduce the risk by using only providers that publicly commit to no retention and no training (section 7).</p>
+
+      <h3>9. Your rights</h3>
+      <p>Under Hong Kong's Personal Data (Privacy) Ordinance (Cap. 486) you can:</p>
+      <ul>
+        <li><strong>access and correct</strong> personal data we hold about you;</li>
+        <li><strong>withdraw consent</strong> at any time in the extension's settings. After you withdraw, the extension stops sending any email content, and our server records the time of withdrawal;</li>
+        <li><strong>ask us to delete</strong> your consent records and your invitation email mapping.</li>
+      </ul>
+      <p><strong>How:</strong> Email <a href="mailto:opt.adm8988@gmail.com">opt.adm8988@gmail.com</a> from the address you received your test invitation at (or include that address), plus roughly when you withdrew or asked for deletion. We match records by invitation email and the time of the request. We do not show personal identifiers in the interface. We will reply within 40 days of receiving your request.</p>
+      <p><strong>Special cases: withdrawing offline, or uninstalling without withdrawing.</strong></p>
+      <ul>
+        <li>If you withdraw while <strong>offline</strong>, the extension stops sending content immediately, but our server may not learn of the withdrawal until you are next online.</li>
+        <li>If you <strong>uninstall without withdrawing first</strong>, our server cannot know. Your consent record is kept until 12 months after withdrawal or after the access token was last used, whichever is earlier, and is then deleted automatically.</li>
+        <li>In either case you can email <a href="mailto:opt.adm8988@gmail.com">opt.adm8988@gmail.com</a> to ask for deletion, from the address you received your test invitation at (or include that address). If we can't match a record to you, these records contain only a hashed identifier, a policy version and timestamps, with no email content.</li>
+      </ul>
+      <p>Note: we don't store your email content, so <strong>there is no email content for us to show or delete.</strong> OpenRouter and the providers state that they don't retain content either (section 7).</p>
+
+      <h3>10. Chrome Web Store User Data Policy</h3>
+      <p>The use of information by "AI 回覆" adheres to the Chrome Web Store User Data Policy, including the Limited Use requirements:</p>
+      <ul>
+        <li>Data is used only for the extension's single purpose: drafting a reply to the email you are replying to.</li>
+        <li>Data is transferred to third parties only when that's needed to provide this feature (the services in section 7), to comply with law, or to prevent abuse.</li>
+        <li>Data is never used or transferred for personalised advertising. It is never sold to ad platforms or data brokers, and never used for credit or lending decisions.</li>
+        <li>Nobody reads your data unless you explicitly consent, or it's needed for security or required by law.</li>
+      </ul>
+
+      <h3>11. Security</h3>
+      <ul>
+        <li>Connections between the extension and our server, and between our server and OpenRouter, are encrypted (HTTPS).</li>
+        <li>API keys are kept only on the server, never in the extension.</li>
+        <li>Identifiers are stored as hashes.</li>
+      </ul>
+      <p>No internet transmission can be guaranteed to be completely secure.</p>
+
+      <h3>12. Age</h3>
+      <p>"AI 回覆" is not intended for people under 18.</p>
+
+      <h3>13. Changes to this policy</h3>
+      <p>If we change this policy, we will update the version number and effective date. If a change is material, for example adding an AI provider or storing a new type of data, the extension will ask you to <strong>consent again</strong> before it sends any more content.</p>
+
+      <h3>14. Contact and complaints</h3>
+      <ul>
+        <li>For questions or requests, email <a href="mailto:opt.adm8988@gmail.com">opt.adm8988@gmail.com</a>.</li>
+        <li>If you think we have mishandled your personal data, you can complain to Hong Kong's Office of the Privacy Commissioner for Personal Data: <a href="https://www.pcpd.org.hk" rel="noopener">https://www.pcpd.org.hk</a></li>
+      </ul>
+    </section>
+  </div>
+  <footer>© AI 回覆</footer>
+</body>
+</html>
